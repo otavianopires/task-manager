@@ -49,7 +49,6 @@ model User {
   accounts      Account[]
   sessions      Session[]
   task          Task[]
-  taskTracker   TaskTracker[]
 }
 
 model VerificationToken {
@@ -75,23 +74,4 @@ model Task {
   userId      String
 
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model TaskTracker {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  finishedAt  DateTime @updatedAt
-  status      Status   @default(TO_DO)
-  pause       Boolean  @default(false)
-  userId      String
-
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-enum Status {
-  TO_DO
-  ACTIVE
-  IN_PROGRESS
-  COMPLETE
 }
