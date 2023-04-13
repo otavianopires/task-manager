@@ -68,9 +68,10 @@ enum Role {
 model Task {
   id          Int      @id @default(autoincrement())
   title       String
-  description String? @db.LongText
+  description String?  @db.LongText
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  startDate   DateTime? @db.DateTime()
   userId      String
 
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
