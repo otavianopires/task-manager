@@ -59,9 +59,6 @@ export async function getStaticProps() {
   let tasks = await prisma.task.findMany({
     orderBy: {
       startDate: 'asc'
-    },
-    include: {
-      user: true,
     }
   });
 
