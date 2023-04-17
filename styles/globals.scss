@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply leading-7 theme-default tracking-wide bg-background text-onBackground font-sans;
+}
+
+h1 {
+  @apply font-slab text-3xl font-bold mb-6;
+}
+
+h2 {
+  @apply text-xl font-bold my-2;
+}
+
+p {
+  @apply mb-6;
+}
+.container {
+  @apply px-6 w-full max-w-2xl mx-auto;
+}
+
+.date-time-input{
+  .rdtPicker {
+    @apply bg-rose-800 border-rose-500;
+  }
+}
+
+.theme-admin {
+  --color-primary: #134e4a; // 900
+  --color-on-primary: #ffffff;
+  --color-accent-primary: #115e59; // 800
+  --color-secondary: #fcd34d; // 300
+  --color-on-secondary: #450a0a; // 950
+  --color-accent-secondary: #fef3c7; // 200
+  --color-background: #042f2e; // 950
+  --color-on-background: #ffffff;
+  --color-surface: #134e4a; // 900
+  --color-on-surface: #ffffff;
+  --color-accent-surface: #115e59; // 800
+  --color-darker-surface: #042f2e; // 950
+  --color-surface-border: #0f766e; // 700
+}
+
+.theme-default {
+  --color-primary: #0c4a6e; //900
+  --color-on-primary: #ffffff;
+  --color-accent-primary: #075985; // 800
+  --color-secondary: #fcd34d; // 300
+  --color-on-secondary: #450a0a; // 950
+  --color-accent-secondary: #fef3c7; // 200
+  --color-background: #082f49; // 950
+  --color-on-background: #ffffff;
+  --color-surface: #0c4a6e; // 900
+  --color-on-surface: #ffffff;
+  --color-accent-surface: #075985; // 800
+  --color-darker-surface: #082f49; // 950
+  --color-surface-border: #0369a1; // 700
+}
