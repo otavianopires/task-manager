@@ -17,8 +17,15 @@ h2 {
 p {
   @apply mb-6;
 }
+
 .container {
   @apply px-6 w-full max-w-2xl mx-auto;
+}
+
+main {
+  a {
+    @apply hover:underline;
+  }
 }
 
 .date-time-input{
