@@ -1,15 +1,13 @@
 import Link from "next/link";
 import style from "./Button.module.scss"
 
-export default function Button({href, type, onClick, target, size, ariaLabel, children}) {
+export default function Button({href, type, size, children, ...props}) {
   const btnClassName = size === 'md' ? style.md :  size === 'lg' ? style.lg :  size === 'rounded' ? style.rounded : style.md;
   if (!href || type === 'button') {
     return (
       <button
-        type={type}
-        onClick={onClick}
+        {...props}
         className={btnClassName}
-        aria-label={ariaLabel}
       >
         {children}
       </button>
@@ -18,10 +16,8 @@ export default function Button({href, type, onClick, target, size, ariaLabel, ch
 
   return (
     <Link
-      href={href}
-      onClick={onClick}
-      target={target}
-      className={btnClassName}
+    {...props}
+    className={btnClassName}
     >
       {children}
     </Link>

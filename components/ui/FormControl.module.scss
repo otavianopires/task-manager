@@ -1,0 +1,5 @@
+.formControl {
+  input, textarea {
+    @apply bg-surface border border-solid border-surfaceBorder p-1 block w-full mb-6 py-4 px-4;
+  }
+}
