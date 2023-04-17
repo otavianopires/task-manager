@@ -33,7 +33,7 @@ export default function Header({ role, currentPage }) {
   return (
     <header className="py-4 md:py-6 w-full bg-surface">
       <div className="container flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
-        <h4 className="font-slab text-md font-bold text-secondary block uppercase">Task Manager</h4>
+        <h4 className="font-slab text-md font-bold text-secondary block uppercase"><Link href="/">Task Manager</Link></h4>
         <div className="flex justify-center md:justify-end items-center gap-4 flex-grow text-sm md:text-md w-full md:w-auto">
           { role &&
             <Navbar>
