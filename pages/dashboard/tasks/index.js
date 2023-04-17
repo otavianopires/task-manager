@@ -29,7 +29,7 @@ export default function TasksPage({tasks}) {
               <h3 className="font-bold">{tasksYear[month].month}</h3>
               {tasksYear[month].tasks.map(task => (
                 <article key={task.id}>
-                  <Link href={`tasks/${task.id}`} className="bg-surface hover:bg-accentSurface py-4 px-6 my-6 rounded-xl block">
+                  <Link href={`tasks/${task.id}`} className="bg-surface hover:bg-accentSurface hover:no-underline py-4 px-6 my-6 rounded-xl block">
                     <h4 className="text-secondary font-bold">{task.title}</h4>
                     <time>{formatDate(task.startDate)}</time>
                   </Link>
