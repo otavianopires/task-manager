@@ -78,7 +78,6 @@ export default function FormTask({ id }) {
 
   useEffect(() => {
     const getTask = async () => {
-      console.log(id);
       const response = await fetchData(`/api/tasks/${id}`);
       if (response.success) {
         setTitle(response.task.title);

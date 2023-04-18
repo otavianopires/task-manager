@@ -4,7 +4,7 @@ import Header from './Header';
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { isAdmin, isAdminPage } from '@/lib/helpers';
+import { applyThemeClassname, isAdmin, isAdminPage } from '@/lib/helpers';
 import Loading from './ui/Loading';
 
 const roboto = Roboto({
@@ -23,7 +23,11 @@ export default function Layout({ children, options }) {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  const checkUserPermissions = () => {
+  useEffect(() => {
+    document.body.classList.add(
+      roboto.variable,
+      roboto_slab.variable,
+    );
     if (status === "authenticated" && session.hasOwnProperty('user') ) {
       if (isAdminPage(router.pathname) && !isAdmin(session.user.role)) {
         router.push("/dashboard");
@@ -33,29 +37,10 @@ export default function Layout({ children, options }) {
     } else {
       setLoading(false);
     }
-    applyThemeClassname();
-  }
-
-  const applyThemeClassname = () => {
-    if (isAdminPage(router.pathname)) {
-      document.body.classList.remove('theme-default');
-      document.body.classList.add('theme-admin');
-    } else {
-      document.body.classList.remove('theme-admin');
-      document.body.classList.add('theme-default');
-    }
-  }
-
-  useEffect(() => {
-    checkUserPermissions();
-    document.body.classList.add(
-      roboto.variable,
-      roboto_slab.variable,
-    );
   }, []);
 
   useEffect(() => {
-    checkUserPermissions();
+    applyThemeClassname(router.pathname);
   }, [router.pathname]);
 
   if (loading) {
