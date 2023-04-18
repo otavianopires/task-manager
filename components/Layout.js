@@ -41,6 +41,11 @@ export default function Layout({ children, options }) {
 
   useEffect(() => {
     applyThemeClassname(router.pathname);
+    if (status === "authenticated" && session.hasOwnProperty('user') ) {
+      if (!isAdminPage(router.pathname)) {
+        setLoading(false);
+      }
+    }
   }, [router.pathname]);
 
   if (loading) {
