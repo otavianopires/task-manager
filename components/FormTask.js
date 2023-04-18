@@ -64,7 +64,7 @@ export default function FormTask({ id }) {
     if (id === undefined) {
       setTitle('');
       setDescription('');
-      setStartDate(new Date());
+      setStartDate(formatInputDateTimeLocal(new Date()));
     }
 
     setMessage(response.message);
