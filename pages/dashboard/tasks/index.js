@@ -89,5 +89,6 @@ export async function getStaticProps() {
     props: {
       tasks: tasksByYear
     },
+    revalidate: 60
   }
 }

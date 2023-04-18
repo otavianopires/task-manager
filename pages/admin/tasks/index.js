@@ -37,5 +37,6 @@ export async function getStaticProps() {
     props: {
       tasks
     },
+    revalidate: 60
   }
 }
