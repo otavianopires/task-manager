@@ -15,6 +15,8 @@ DATABASE_URL="mysql://johndoe:mypassword@localhost6:3306/mydb"
 SHADOW_DATABASE_URL="mysql://johndoe:mypassword@localhost6:3306/mydb2"
 GOOGLE_CLIENT_ID="123456.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET="GOOGLE-123-456-789"
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="secret"
 ```
 
 Run the development server:
