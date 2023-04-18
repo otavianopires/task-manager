@@ -10,8 +10,12 @@ const menu = {
       path: '/admin',
     },
     {
+      text: 'Tasks',
+      path: '/admin/tasks',
+    },
+    {
       text: 'New Task',
-      path: '/admin/new-task',
+      path: '/admin/tasks/new',
     },
   ],
   user: [
