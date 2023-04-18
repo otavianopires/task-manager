@@ -3,7 +3,6 @@
     font-bold
     box-border
     items-center
-    rounded-full
     bg-secondary
     hover:bg-accentSecondary
     text-onSecondary #{!important};
@@ -12,6 +11,7 @@
 .md {
   @apply
     btnDefault
+    rounded-xl
     py-2
     px-6;
 }
@@ -19,13 +19,15 @@
 .lg {
   @apply
     btnDefault
+    rounded-xl
     text-lg
     py-4
-    px-12;
+    px-8;
 }
 
 .rounded {
   @apply
     btnDefault
+    rounded-full
     p-[5px];
 }
