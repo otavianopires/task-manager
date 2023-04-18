@@ -8,7 +8,7 @@ export default function LoginPage() {
   const { data: session } = useSession();
   const [googleLoginLoading, setGoogleLoginLoading] = useState(false);
   return (
-    <Layout>
+    <>
       <h1 className="my-6 font-bold text-2xl text-center">Login</h1>
       <div className="text-center">
         {!session && (
@@ -42,6 +42,6 @@ export default function LoginPage() {
           </>
         )}
       </div>
-    </Layout>
+    </>
   )
 }
