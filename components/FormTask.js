@@ -10,7 +10,8 @@ export default function FormTask({ id }) {
   const [errors, setErrors] = useState(false);
   const [message, setMessage] = useState(false);
   const [disable, setDisable] = useState(false);
-  console.log(startDate);
+  const [buttonLabel, setButtonLabel] = useState('Add task');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(false);
@@ -87,6 +88,7 @@ export default function FormTask({ id }) {
     }
     if (id !== undefined) {
       getTask();
+      setButtonLabel('Update Task');
     }
   }, []);
 
@@ -130,7 +132,7 @@ export default function FormTask({ id }) {
             onChange={handleDate}
           />
         </FormControl>
-        <Button type="submit" size="lg" disabled={disable}>Add task</Button>
+        <Button type="submit" size="lg" disabled={disable}>{buttonLabel}</Button>
       </form>
     </>
   )
